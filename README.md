@@ -11,18 +11,16 @@ It will fast forward the timers on the event loop whenever it is idle.
 
 ```js
 const virtualTime = require('virtual-time');
-let NativeDate = Date;
-virtualTime.install()
+let realNow = Date.now;
+virtualTime.install();
 
-let startTimeReal = NativeDate.now();
+let startTimeReal = realNow();
 let startTimeVirtual = Date.now();
 
 setTimeout(() => {
-  let durationReal = NativeDate.now() - startTimeReal;
+  let durationReal = realNow() - startTimeReal;
   let durationVirtual = Date.now() - startTimeVirtual;
-
   console.log(`Real duration: ${durationReal}ms; Virtual duration: ${durationVirtual}ms`);
-  // Real duration: 2ms; Virtual duration: 100000ms
 }, 100000);
 ```
 
