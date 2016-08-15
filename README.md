@@ -5,6 +5,8 @@ Fast forward the event loop when it runs out of work
 When installed, this library overwrites `setTimeout`, `clearTimeout`, `setInterval`, `clearInterval` and `Date` functionality.
 It will fast forward the timers on the event loop whenever it is idle.
 
+[![Build Status](https://travis-ci.org/Janpot/virtual-time.svg?branch=master)](https://travis-ci.org/Janpot/virtual-time)
+
 ## Example
 
 ```js
