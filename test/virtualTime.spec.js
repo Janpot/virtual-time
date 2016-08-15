@@ -1,5 +1,8 @@
 /* eslint-env mocha */
 
+// set timezone for `Date()` tests
+process.env.TZ = 'Europe/Brussels';
+
 const virtualTime = require('..');
 const { assert } = require('chai');
 
